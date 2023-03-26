@@ -25,6 +25,7 @@ class LogIn extends StatefulWidget {
 
 class _LogInState extends State<LogIn> {
 
+  bool emailField = true;
   TextEditingController controller = TextEditingController();
   TextEditingController controller2 = TextEditingController();
 
@@ -80,16 +81,19 @@ class _LogInState extends State<LogIn> {
                             padding: const EdgeInsets.all(40),
                             child: Column(
                               children: [
-                                TextField(
-                                  controller: controller,
-                                  decoration: const InputDecoration(
+                                if(emailField)
+                                const TextField(
+                                  key: ValueKey(1),
+                                  //controller: controller,
+                                  decoration: InputDecoration(
                                       labelText: 'Enter "dice"'
                                   ),
                                   keyboardType: TextInputType.emailAddress,
                                 ),
-                                TextField(
-                                  controller: controller2,
-                                  decoration: const InputDecoration(
+                                const TextField(
+                                  key: ValueKey(2),
+                                  //controller: controller2,
+                                  decoration: InputDecoration(
                                       labelText: 'Enter Password'
                                   ),
                                   keyboardType: TextInputType.text,
@@ -101,25 +105,16 @@ class _LogInState extends State<LogIn> {
                                     height: 50,
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
-                                          backgroundColor: Colors.orangeAccent
+                                          backgroundColor: Colors.orangeAccent,
+                                          minimumSize: const Size(150, 50)
                                       ),
                                       onPressed: () {
-                                        if(controller.text == "dice" && controller2.text == '1234'){
-                                          Navigator.push(context,
-                                              MaterialPageRoute(builder: (BuildContext context) => const Dice()));
-                                        }
-                                        else if(controller.text == "dice" && controller2.text != '1234'){
-                                          showSnackBar2(context);
-                                        }
-                                        else if(controller.text != "dice" && controller2.text == '1234') {
-                                          showSnackBar3(context);
-                                        }
-                                        else {
-                                          showSnackBar(context);
-                                        }
+                                        setState(() {
+                                          emailField = false;
+                                        });
                                       },
                                       child: const Icon(
-                                        Icons.arrow_forward,
+                                        Icons.visibility_off,
                                         color: Colors.white,
                                         size: 35,
                                       ),
