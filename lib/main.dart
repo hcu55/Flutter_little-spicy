@@ -90,7 +90,6 @@ class _LogInState extends State<LogIn> {
                                   ),
                                   keyboardType: TextInputType.emailAddress,
                                 ),
-
                                 const TextField(
                                   key: ValueKey(2),
                                   //controller: controller2,
