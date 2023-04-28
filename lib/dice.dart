@@ -10,6 +10,7 @@ class Dice extends StatefulWidget {
   @override
   State<Dice> createState() => _DiceState();
 }
+
 class _DiceState extends State<Dice> {
   int leftDice = 1;
   int rightDice = 1;
