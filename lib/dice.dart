@@ -11,7 +11,6 @@ class Dice extends StatefulWidget {
   State<Dice> createState() => _DiceState();
 }
 
-
 class _DiceState extends State<Dice> {
   int leftDice = 1;
   int rightDice = 1;
