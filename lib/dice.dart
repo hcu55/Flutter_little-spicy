@@ -23,6 +23,7 @@ class _DiceState extends State<Dice> {
         backgroundColor: Colors.redAccent,
         title: Text("Dice game"),
       ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
