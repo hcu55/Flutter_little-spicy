@@ -39,7 +39,6 @@ class _LogInState extends State<LogIn> {
         leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {
-
           },
         ),
         actions: [
