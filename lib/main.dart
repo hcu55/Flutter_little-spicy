@@ -48,7 +48,6 @@ class _LogInState extends State<LogIn> {
           )
         ],
       ),
-
       body: Builder(
         builder:(context) {
           return GestureDetector(
